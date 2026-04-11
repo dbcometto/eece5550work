@@ -321,7 +321,7 @@ if __name__ == "__main__":
     ax.set_ylabel("Row")
     ax.legend(bbox_to_anchor=(1.18,1))
 
-    plt.show()
+    # plt.show()
 
 
 
@@ -364,6 +364,7 @@ if __name__ == "__main__":
             json.dump(data,f)
 
     else:
+        print("loading")
         with open(savepath,"r") as f:
             data = json.load(f)
 
@@ -377,6 +378,10 @@ if __name__ == "__main__":
     pathr = [p[0] for p in path]
     pathc = [p[1] for p in path]
     # planned_map[s] = 2
+
+    print("saving path only")
+    with open("C:\\workspace\\eece5550work\\hw3\\prm_only_path_2500.json","w") as f:
+        json.dump(path,f)
 
 
     fig,ax = plt.subplots(1,1,figsize=(8,8))
